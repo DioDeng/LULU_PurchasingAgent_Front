@@ -1,10 +1,18 @@
 <script setup>
+import { ref } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+
+const num = ref(2)
+function clickAddNum() {
+  num.value++
+}
 </script>
 
 <template>
   <header>
+    <button type="button" @click="clickAddNum">點我＋＋</button>
+    {{ num }}
     <img alt="Vue logo" class="logo" src="@/assets/logo.svg" width="125" height="125" />
 
     <div class="wrapper">
